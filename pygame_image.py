@@ -35,11 +35,11 @@ def main():
         screen.blit(bg_img, [3200-x,0])
 
         screen.blit(img_lst[count],[300,200])
-        if count == 6:
-            count = 0
 
         pg.display.update()
         count += 1
+        if count == 7:
+            count = 0
         tmr += 1
         clock.tick(20)
 
