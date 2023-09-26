@@ -36,7 +36,6 @@ def main():
 
         screen.blit(img_lst[count],[300,200])
         if count == 6:
-            screen.blit(img_lst[6],[300, 200])
             count = 0
 
         pg.display.update()
