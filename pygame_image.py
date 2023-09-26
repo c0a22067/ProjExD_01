@@ -8,6 +8,12 @@ def main():
     clock  = pg.time.Clock()
     bg_img = pg.image.load("ex01/fig/pg_bg.jpg")
     tmr = 0
+    #こうかとんの初期化
+    img_lst = []
+    main_img = pg.image.load("ex01/fig/3.png")
+    main_img = pg.transform.flip(main_img, True, False)
+
+
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
