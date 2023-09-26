@@ -12,7 +12,9 @@ def main():
     img_lst = []
     main_img = pg.image.load("ex01/fig/3.png")
     main_img = pg.transform.flip(main_img, True, False)
-
+    img_lst.append(main_img)
+    main_img = pg.transform.rotozoom(main_img,10, 1.0)
+    img_lst.append(main_img)
 
     while True:
         for event in pg.event.get():
