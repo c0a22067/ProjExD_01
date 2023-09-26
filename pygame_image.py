@@ -15,19 +15,26 @@ def main():
     img_lst.append(main_img)
     main_img = pg.transform.rotozoom(main_img,10, 1.0)
     img_lst.append(main_img)
+    cnt = 0
 
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img, [0, 0])
+        if cnt > -1600:
+            cnt -= 1
+        elif cnt == -1600:
+            cnt = 0
+
+        screen.blit(bg_img, [cnt, 0])
+        screen.blit(bg_img, [cnt + 1600, 0])
         if tmr % 2 == 0:
             screen.blit(img_lst[0],[300,200])
         else:
             screen.blit(img_lst[1],[300, 200])
         pg.display.update()
         tmr += 1        
-        clock.tick(10)
+        clock.tick(20)
 
 
 if __name__ == "__main__":
